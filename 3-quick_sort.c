@@ -1,5 +1,10 @@
 #include "sort.h"
 
+int partition(int *array, int low, int high, size_t size);
+void swap(int *a, int *b);
+void quick_sort(int *array, size_t size);
+void quick_sort_recursive(int *array, int low, int high, size_t size);
+
 /**
  * swap - Swaps two elements in an array
  * @a: Pointer to the first element
@@ -32,12 +37,10 @@ int partition(int *array, int low, int high, size_t size)
 		{
 			i++;
 			swap(&array[i], &array[j]);
-			printf("Swap: ");
 			print_array(array, size);
 		}
 	}
 	swap(&array[i + 1], &array[high]);
-	printf("Swap: ");
 	print_array(array, size);
 	return (i + 1);
 }
